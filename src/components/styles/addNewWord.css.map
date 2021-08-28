@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "addNewWord.scss"
+    ],
+    "names": [],
+    "file": "addNewWord.css"
+}
