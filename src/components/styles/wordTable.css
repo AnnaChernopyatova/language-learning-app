@@ -1,1 +1,40 @@
-/* No CSS *//*# sourceMappingURL=wordTable.css.map */
+@import url(https://allfont.ru/allfont.css?fonts=ubuntu);
+.wordTable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wordTable_header {
+  height: 3vh;
+  text-align: center;
+  margin-top: 5px;
+  padding-top: 1vh;
+  font-family: "Ubuntu", arial;
+  font-size: 1em;
+  border: 1px solid #df8754;
+}
+
+.wordTable_header__num {
+  margin-left: 5px;
+  width: 5vw;
+}
+
+.wordTable_haeder__word {
+  width: 25vw;
+}
+
+.wordTable_haeder__transcription {
+  width: 25vw;
+}
+
+.wordTable_haeder__translation {
+  width: 25vw;
+}
+
+.wordtable_header__empty {
+  width: 13vw;
+}
+/*# sourceMappingURL=wordTable.css.map */

@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './styles/wordTable.css';
 import WordLine from './wordLine';
-import WordList from './wordType';
 import data from '../words.json';
 
 let wordsArr = data;
-console.log(wordsArr);
 
 
 
@@ -23,6 +21,9 @@ function WordTable (props){
             </div>
             <div className='wordTable_header wordTable_haeder__translation'>
                 Translation
+            </div>
+            <div className='wordTable_header wordtable_header__empty'>
+                
             </div>
             <WordLine words={wordsArr}></WordLine>
         </div>

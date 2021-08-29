@@ -1,21 +1,37 @@
 import React from 'react';
-import styles from './styles/wordList.css';
+import ChangeWord from './changeWord';
+import styles from './styles/wordType.css';
 
 
-function WordList (number, word, transcription, translation, change){
+function WordType (props){
     return(
         <div className='line'>
-            <div className='lineNumber'>
-                {number}
+            <div className='wordline_Number'>
+                {props.number}
             </div>
-            {change 
-                ? <changeWord></changeWord>
-                :<div><div>{word}</div> <div>{transcription}</div> <div>{translation} </div></div>}  
-            
-            
-            <input type='text' id='wordChageInput'/> <input type='text' id='transcriptionChangeInput'/> <input type='text' id='translationChangeInput'/> <button>Save</button> <button>Cancel</button> : <div>{word}</div>
+            {props.change 
+                ? <ChangeWord></ChangeWord>
+                :<div className='wordLine'>
+                    <div className=' wordLine_word'>
+                        {props.word}
+                    </div> 
+                    <div className='wordLine_transcription'>
+                        {props.transcription}
+                    </div> 
+                    <div className='wordLine_translation'>
+                        {props.translation} 
+                    </div>
+                </div>}  
+                <div className='wordLine_empty'>
+                    <button className='button button_change'>
+                        Редактировать
+                    </button>
+                    <button className='button button_delete'>
+                        Удалить
+                    </button>
+                </div>
         </div>
     )
 }
 
-export default WordList;
+export default WordType;

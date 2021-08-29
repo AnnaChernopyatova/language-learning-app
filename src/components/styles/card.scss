@@ -1,0 +1,33 @@
+@import 'vars';
+
+.card{
+    margin: 15px;
+    width: 10vw;
+    height: auto;
+    font-family: $fontFamily;
+    font-size: $fontSizeReg ;
+    border: 2px solid $lightPink;
+    border-radius: 7%;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.664);
+}
+
+.card_word{
+    font-size: $fontSizeBig ;
+}
+
+.card_transcription{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card_button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: $peach ;
+    border: 2px solid rgb(224, 116, 53);
+    border-radius: 5px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

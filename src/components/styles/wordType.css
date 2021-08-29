@@ -1,0 +1,79 @@
+@import url(https://allfont.ru/allfont.css?fonts=ubuntu);
+.line {
+  margin: 0%;
+  margin-left: 5px;
+  height: 4vh;
+  text-align: center;
+  font-family: "Ubuntu", arial;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wordLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wordline_Number {
+  padding-top: 1vh;
+  width: 5vw;
+  border: 1px solid #e6905e;
+}
+
+.wordLine_word {
+  padding-top: 1vh;
+  width: 25vw;
+  border: 1px solid #e6905e;
+}
+
+.wordLine_transcription {
+  padding-top: 1vh;
+  width: 25vw;
+  border: 1px solid #e6905e;
+}
+
+.wordLine_translation {
+  padding-top: 1vh;
+  width: 25vw;
+  border: 1px solid #e6905e;
+}
+
+.wordLine_empty {
+  width: 13vw;
+  border: 1px solid #e6905e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button {
+  width: 6vw;
+  height: 2.5vh;
+  font-family: "Ubuntu", arial;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button_change {
+  background-color: #b2d128;
+  border: 2px solid #8abd24;
+  border-radius: 5px;
+}
+
+.button_delete {
+  background-color: #dd5252;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=wordType.css.map */
