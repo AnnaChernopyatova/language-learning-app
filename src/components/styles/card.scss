@@ -2,7 +2,7 @@
 
 .card{
     margin: 15px;
-    width: 10vw;
+    width: 12vw;
     height: auto;
     font-family: $fontFamily;
     font-size: $fontSizeReg ;
@@ -30,4 +30,8 @@
     &:hover{
         cursor: pointer;
     }
+}
+
+.card_translation{
+    margin-bottom: 5px;
 }

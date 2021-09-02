@@ -1,7 +1,7 @@
 @import url(https://allfont.ru/allfont.css?fonts=ubuntu);
 .card {
   margin: 15px;
-  width: 10vw;
+  width: 12vw;
   height: auto;
   font-family: "Ubuntu", arial;
   font-size: 1em;
@@ -30,5 +30,9 @@
 
 .card_button:hover {
   cursor: pointer;
+}
+
+.card_translation {
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=card.css.map */
