@@ -2,8 +2,8 @@
 
 .card{
     margin: 15px;
-    width: 12vw;
-    height: auto;
+    width: 30vw;
+    height: 55vh;
     font-family: $fontFamily;
     font-size: $fontSizeReg ;
     border: 2px solid $lightPink;
@@ -16,16 +16,17 @@
 }
 
 .card_transcription{
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 5px;
 }
 
 .card_button{
-    margin-top: 5px;
+    margin-top: 8vh;
     margin-bottom: 5px;
     background-color: $peach ;
     border: 2px solid rgb(224, 116, 53);
     border-radius: 5px;
+    font-size: $fontSizeReg;
 
     &:hover{
         cursor: pointer;
@@ -33,5 +34,6 @@
 }
 
 .card_translation{
+    margin-top: 8vh;
     margin-bottom: 5px;
 }

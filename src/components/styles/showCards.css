@@ -1,0 +1,47 @@
+.showCard {
+  border: solid grey 5px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.showCard_homeButton {
+  margin-left: 0%;
+  border: none;
+}
+
+.showCard_homeButton:hover {
+  border: solid 1px grey;
+}
+
+.showCard_homeImage {
+  width: 50px;
+}
+
+.showCard_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80vw;
+  height: 80vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.showCard_button:disabled {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.showCard_buttonImg {
+  width: 100px;
+}
+/*# sourceMappingURL=showCards.css.map */

@@ -1,35 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './styles/card.css';
+import ShowTranslation from './showTranslation';
 
 function Card(props){
-    const [showButton, setShowButton] = useState(props.showButton || true);
-    const [showTranslation, setShowTranslation] = useState(props.showTranslation || false);
 
-    const handleChange = () =>{
-        setShowButton(!showButton);
-        setShowTranslation(!showTranslation);
-    }
+    let word = props.wordsArr.words;
+    console.log(props.cardNumber);
+
 
     return(
         <div className='card'>
-            {console.log(props)}
-            <h3 className='card_word'>{props.words.words[0].english}</h3>
+            <h3 className='card_word'>{word[props.cardNumber-1].english}</h3>
             <div>
-                {props.words.words[0].tags}
+                {word[props.cardNumber-1].tags}
             </div>
             <div className='card_transcription'>
-                {props.words.words[0].transcription}
+                {word[props.cardNumber-1].transcription}
             </div>
-            {showButton &&
-            <button className='card_button' onClick={handleChange}>
-                Показать перевод
-            </button>
-            }
-            {showTranslation&&
-            <div className='card_translation'>
-                {props.words.words[0].russian}
-            </div>
-            }
+            <ShowTranslation{...props}></ShowTranslation>
         </div>
     )
 }

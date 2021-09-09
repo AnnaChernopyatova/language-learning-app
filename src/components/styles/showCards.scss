@@ -1,0 +1,38 @@
+
+
+.showCard{
+    border: solid grey 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-items: left;
+    align-items: flex-start;
+}
+
+.showCard_homeButton{
+    margin-left: 0%;
+    border: none;
+
+    &:hover{
+        border: solid 1px grey;
+    }
+}
+
+.showCard_homeImage{
+    width: 50px;
+}
+
+.showCard_card{
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.showCard_button:disabled{
+    filter: blur(2px);
+}
+
+.showCard_buttonImg{
+    width: 100px;
+}
