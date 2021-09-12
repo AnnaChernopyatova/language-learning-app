@@ -1,0 +1,25 @@
+@import 'vars';
+
+.cardsFinished{
+    height: 80vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $fontFamily;
+}
+
+.cardsFinished_header{
+    text-align: center;
+    font-size: $fontSizeBig;
+}
+
+.cardsFinished_button{
+    margin-top: 2vh;
+    font-size: $fontSizeReg;
+}
+
+.cardsFinished_pic{
+    width: 40vw;
+}
