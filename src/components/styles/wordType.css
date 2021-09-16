@@ -1,7 +1,6 @@
 @import url(https://allfont.ru/allfont.css?fonts=ubuntu);
 .line {
   margin: 0%;
-  margin-left: 5px;
   height: auto;
   text-align: center;
   font-family: "Ubuntu", arial;
@@ -23,7 +22,7 @@
 
 .wordline_Number {
   padding-top: 1vh;
-  width: 5vw;
+  width: 4.2vw;
   border: 1px solid #e6905e;
 }
 
@@ -46,7 +45,7 @@
 }
 
 .wordLine_empty {
-  width: 17vw;
+  width: 20vw;
   border: 1px solid #e6905e;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import homeicon from './images/homeicon.svg';
+
 import arrowleft from './images/arrowleft.svg';
 import arrowright from './images/arrowright.svg';
 import Card from './card';
@@ -17,9 +17,6 @@ function ShowCards(props){
 
     return(
         <div className="showCard">
-            <button className="showCard_homeButton">
-                <img src={homeicon} alt="Home button" className='showCard_homeImage'/>
-            </button>
             {cardNumber > props.wordsArr.words.length? 
             <CardsEnded handlenumber={handlenumber}></CardsEnded>
             : <div className="showCard_card">

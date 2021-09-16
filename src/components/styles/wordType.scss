@@ -2,7 +2,6 @@
 
 .line{
     margin: 0%;
-    margin-left: 5px;
     height: auto;
     text-align: center;
     font-family: $fontFamily;
@@ -20,7 +19,7 @@
 
 .wordline_Number{
     padding-top: 1vh;
-    width: 5vw;
+    width: 4.2vw;
     border: 1px solid $peach;
 }
 
@@ -43,7 +42,7 @@
 }
 
 .wordLine_empty{
-    width: 17vw;
+    width: 20vw;
     border: 1px solid $peach;
     display: flex;
     justify-content: space-evenly;

@@ -1,1 +1,51 @@
-/* No CSS *//*# sourceMappingURL=header.css.map */
+@import url(https://allfont.ru/allfont.css?fonts=ubuntu);
+.header {
+  width: 100vw;
+  height: 16vh;
+  background-color: #e69a9a;
+  position: fixed;
+}
+
+.header
+.showCard_homeImage {
+  width: 60px;
+  margin: 10px;
+}
+
+.header
+.showCard_homeImage:hover {
+  border: dashed grey;
+}
+
+.header_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 15vh;
+}
+
+.navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 25vw;
+}
+
+.navList_item {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.navList_a {
+  text-decoration: none;
+  color: #292727;
+  font-size: 1.3em;
+}
+
+.navList_a:hover {
+  text-decoration: underline;
+  color: black;
+}
+/*# sourceMappingURL=header.css.map */

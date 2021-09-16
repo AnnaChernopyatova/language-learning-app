@@ -1,6 +1,7 @@
 
 
 .showCard{
+    height: 83.5vh;
     border: solid grey 5px;
     border-radius: 10px;
     display: flex;
@@ -8,22 +9,11 @@
     align-items: flex-start;
 }
 
-.showCard_homeButton{
-    margin-left: 0%;
-    border: none;
 
-    &:hover{
-        border: solid 1px grey;
-    }
-}
-
-.showCard_homeImage{
-    width: 50px;
-}
 
 .showCard_card{
     display: flex;
-    width: 80vw;
+    width: 100vw;
     height: 80vh;
     justify-content:space-around;
     align-items: center;
