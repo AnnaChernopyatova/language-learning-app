@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef, forwardRef} from 'react';
 import styles from './styles/card.css';
 import ShowTranslation from './showTranslation';
 
 function Card(props){
 
     let word = props.wordsArr.words;
-    console.log(props.cardNumber);
+
+    useEffect(() => ref.current.focus(), [props.card]);
+    const ref = useRef();
 
 
     return(
@@ -17,7 +19,7 @@ function Card(props){
             <div className='card_transcription'>
                 {word[props.cardNumber-1].transcription}
             </div>
-            <ShowTranslation{...props}></ShowTranslation>
+            <ShowTranslation {...props} ref={ref}></ShowTranslation>
         </div>
     )
 }

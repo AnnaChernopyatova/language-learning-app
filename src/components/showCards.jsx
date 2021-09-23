@@ -9,10 +9,19 @@ import styles from './styles/showCards.css'
 
 function ShowCards(props){
     let[cardNumber, changenumber] = useState(props.cardNumber|| 1 );
+    let[wordLearnt, changeWordlearnt] = useState(0);
 
+    const moreWordsLearnt = () =>{
+        changeWordlearnt(wordLearnt+1);
+    }
 
     const handlenumber = () =>{
         changenumber(cardNumber = 1);
+        changeWordlearnt(wordLearnt=0);
+    }
+
+    const nextCard = () =>{
+        changenumber(cardNumber+1);
     }
 
     return(
@@ -24,12 +33,15 @@ function ShowCards(props){
                     <img src={arrowleft} alt="Arrow left" className='showCard_buttonImg'/>
                 </button>
                 <div>
+                    <div>
+                        За текущую тренировку выучено {wordLearnt} слов.
+                    </div>
                     <Card 
-                        cardNumber = {cardNumber} {...props}>
+                        cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} {...props}>
                     </Card>
                     {cardNumber}/{props.wordsArr.words.length}
                 </div>
-                <button className="showCard_button" onClick={()=> changenumber(cardNumber+1)}>
+                <button className="showCard_button" onClick={nextCard}>
                     <img src={arrowright} alt="Arrow right" className='showCard_buttonImg'/>
                 </button>
             
