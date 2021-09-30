@@ -8,7 +8,7 @@ function Card(props){
 
     let word = props.wordsArr.words;
 
-    useEffect(() => ref.current.focus(), [props.card]);
+    useEffect(() => ref.current.focus(), [props.cardNumber]);
     const ref = useRef();
 
     useEffect(() =>{
