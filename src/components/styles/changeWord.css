@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=changeWord.css.map */
+.wordChangeInput__Error {
+  border: red solid 2px;
+}
+
+.button__save:disabled {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+/*# sourceMappingURL=changeWord.css.map */

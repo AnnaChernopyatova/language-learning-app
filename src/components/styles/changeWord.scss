@@ -1,0 +1,7 @@
+.wordChangeInput__Error{
+    border: red solid 2px;
+}
+
+.button__save:disabled{
+    filter: blur(2px);
+}

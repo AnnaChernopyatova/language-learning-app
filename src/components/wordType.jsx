@@ -15,7 +15,7 @@ function WordType (props){
                 {props.number}
             </div>
             {change 
-                ? <ChangeWord handleChange={handleChange} props={props}></ChangeWord>
+                ? <ChangeWord handleChange={handleChange} {...props}></ChangeWord>
                 :<div className='wordLine'>
                     <div className=' wordLine_word'>
                         {props.word}

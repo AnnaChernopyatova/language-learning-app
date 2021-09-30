@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,uBAAuB,CAAA;EACnB,MAAM,EAAE,aAAa;CACxB;;AAED,AAAA,aAAa,AAAA,SAAS,CAAA;EAClB,MAAM,EAAE,SAAS;CACpB",
     "sources": [
         "changeWord.scss"
     ],
