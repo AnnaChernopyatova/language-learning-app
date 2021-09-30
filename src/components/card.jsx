@@ -3,11 +3,24 @@ import styles from './styles/card.css';
 import ShowTranslation from './showTranslation';
 
 function Card(props){
+    let [showButton, setShowButton] = useState(props.showButton || true);
+    let [showTranslation, setShowTranslation] = useState(props.showTranslation || false);
 
     let word = props.wordsArr.words;
 
     useEffect(() => ref.current.focus(), [props.card]);
     const ref = useRef();
+
+    useEffect(() =>{
+        setShowButton(showButton = true);
+        setShowTranslation(showTranslation = false);
+    },[props.cardNumber]);
+
+    const handleChange = () =>{
+        setShowButton(!showButton);
+        setShowTranslation(!showTranslation);
+        props.moreWordsLearnt();
+    }
 
 
     return(
@@ -19,7 +32,7 @@ function Card(props){
             <div className='card_transcription'>
                 {word[props.cardNumber-1].transcription}
             </div>
-            <ShowTranslation {...props} ref={ref}></ShowTranslation>
+            <ShowTranslation {...props} handleChange={handleChange} showButton = {showButton} showTranslation = {showTranslation} ref={ref}></ShowTranslation>
         </div>
     )
 }
