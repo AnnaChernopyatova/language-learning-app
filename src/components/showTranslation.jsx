@@ -1,9 +1,15 @@
-import React, {forwardRef, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 
 
-const ShowTranslation = forwardRef((props, ref) => {
+const ShowTranslation = (props) => {
 
     let word = props.wordsArr.words;
+
+    const ref = useRef();
+    useEffect(() => {
+        props.showButton && ref.current.focus();
+    }, [props.showButton, props.cardNumber]);
+    
 
     return(
         <div>
@@ -19,6 +25,6 @@ const ShowTranslation = forwardRef((props, ref) => {
             }
         </div>
     )
-})
+}
 
 export default ShowTranslation;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, forwardRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './styles/card.css';
 import ShowTranslation from './showTranslation';
 
@@ -7,9 +7,6 @@ function Card(props){
     let [showTranslation, setShowTranslation] = useState(props.showTranslation || false);
 
     let word = props.wordsArr.words;
-
-    useEffect(() => ref.current.focus(), [props.cardNumber]);
-    const ref = useRef();
 
     useEffect(() =>{
         setShowButton(showButton = true);
@@ -32,7 +29,7 @@ function Card(props){
             <div className='card_transcription'>
                 {word[props.cardNumber-1].transcription}
             </div>
-            <ShowTranslation {...props} handleChange={handleChange} showButton = {showButton} showTranslation = {showTranslation} ref={ref}></ShowTranslation>
+            <ShowTranslation {...props} handleChange={handleChange} showButton = {showButton} showTranslation = {showTranslation}></ShowTranslation>
         </div>
     )
 }

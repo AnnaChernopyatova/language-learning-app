@@ -31,6 +31,10 @@
     &:hover{
         cursor: pointer;
     }
+
+    &:focus, &:focus-within, &:focus-visible{
+        outline: 4px solid blue;
+    }
 }
 
 .card_translation{

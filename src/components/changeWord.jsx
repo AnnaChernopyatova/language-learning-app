@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles/changeWord.css';
 
 class ChangeWord extends React.Component{
