@@ -23,26 +23,34 @@ class ChangeWord extends React.Component{
         else this.setState({blockButton: false});
     }
 
-    saveChanges = (e) =>{
-        if (this.state.wordEditable == '' || this.state.transcriptionEditable == '' || this.state.translationEditable == ''){
-            alert('Неверно введенные данные!');
+    saveChanges = () =>{
+        if(this.state.wordEditable.match(/[А-Яа-яЁё]/gm)){
+            document.getElementById('wordInput').classList.toggle('wordChangeInput__Error');
+            alert('Поле ввода слова должно содержать только латинские буквы!');
             return;
         }
-        else {console.log(this.state.wordEditable, this.state.transcriptionEditable, this.state.translationEditable);
-            this.props.handleChange()};
+
+        if(this.state.translationEditable.match(/[A-Za-z]/gm)){
+            document.getElementById('translationInput').classList.toggle('wordChangeInput__Error');
+            alert('Поле ввода перевода должно содержать только русские буквы!');
+            return;
+        } 
+        
+        console.log(this.state.wordEditable, this.state.transcriptionEditable, this.state.translationEditable);
+        this.props.handleChange();
     }
 
     render(){
     return(
         <div className='wordLine'>
             <div className=' wordLine_word'>
-                <input className={this.state.wordEditable == '' && 'wordChangeInput__Error'} type='text' name='wordEditable' value={this.state.wordEditable} onChange={this.handleChange} />
+                <input className={this.state.wordEditable == '' && 'wordChangeInput__Error'} type='text' name='wordEditable' id='wordInput' value={this.state.wordEditable} onChange={this.handleChange} />
             </div>
             <div className='wordLine_transcription'>
                 <input className={this.state.transcriptionEditable == '' && 'wordChangeInput__Error'} type='text' name='transcriptionEditable' value={this.state.transcriptionEditable} onChange={this.handleChange} />
             </div>
             <div className='wordLine_translation'>
-                <input className={this.state.translationEditable == '' && 'wordChangeInput__Error'} type='text' name='translationEditable' value={this.state.translationEditable} onChange={this.handleChange} />
+                <input className={this.state.translationEditable == '' && 'wordChangeInput__Error'} type='text' name='translationEditable' id='translationInput' value={this.state.translationEditable} onChange={this.handleChange} />
             </div>
             <div className='wordLine_empty'>
                 <button className='button button__save' disabled = {this.state.blockButton == true && true} onClick={this.saveChanges} >Сохранить</button>
