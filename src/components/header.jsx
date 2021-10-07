@@ -24,7 +24,7 @@ export default function Header(){
         setLoading(true);
 
         fetch('/api/words')
-            .then((response) => console.log(response))
+            .then((response) => console.log(response.json()))
     }, [])
 
     return(
