@@ -9,6 +9,16 @@ function WordType (props){
     const handleChange = () =>{
         setChange(!change);
     }
+
+    let deleteWord = () =>{
+        fetch(`/api/words/${props.number}/delete`,{
+            method: 'POST',
+            headers:{
+                'Content-Length': '0'
+            }
+        })
+    }
+
     return(
         <div className='line'>
             <div className='wordline_Number'>
@@ -30,7 +40,7 @@ function WordType (props){
                     <button className='button button__change' onClick={handleChange}>
                         Редактировать
                     </button>
-                    <button className='button button__delete'>
+                    <button className='button button__delete' type='button' onClick={deleteWord}>
                         Удалить
                     </button>
                 </div>

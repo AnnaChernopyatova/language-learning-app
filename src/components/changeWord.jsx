@@ -38,6 +38,27 @@ class ChangeWord extends React.Component{
         
         console.log(this.state.wordEditable, this.state.transcriptionEditable, this.state.translationEditable);
         this.props.handleChange();
+        this.formWord();
+    }
+
+    formWord =() =>{
+        let word = {
+            id: this.props.number,
+            english: this.state.wordEditable,
+            transcription: this.state.transcriptionEditable,
+            russian: this.state.translationEditable
+        }
+        this.sendChanges(word);
+    }
+
+    sendChanges = (word) =>{
+        fetch(`/api/words/${this.props.number}/update`,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(word)
+        });
     }
 
     render(){

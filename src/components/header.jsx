@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import{
     BrowserRouter as Router,
     Switch,
@@ -13,9 +13,20 @@ import homeicon from './images/homeicon.svg';
 import Error from "./Error";
 
 let wordsArr = data;
-console.log(wordsArr);
+
+const WordsContext = React.createContext;
 
 export default function Header(){
+
+    const[loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+        setLoading(true);
+
+        fetch('/api/words')
+            .then((response) => console.log(response))
+    }, [])
+
     return(
         <Router>
             <div className='header'>
