@@ -11,10 +11,9 @@ import WordTable from './wordTable';
 import data from '../words.json';
 import homeicon from './images/homeicon.svg';
 import Error from "./Error";
+import WordsContext from './wordsContext';
 
 let wordsArr = data;
-
-const WordsContext = React.createContext;
 
 export default function Header(){
 
