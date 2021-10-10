@@ -15,7 +15,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://sandbox.itgirlschool.ru",
+    "proxy":{
+      "/api":{
+      "target": "http://sandbox.itgirlschool.justmakeit.ru",
+      "changeOrigin": true
+      }
+    },
   "eslintConfig": {
     "extends": [
       "react-app",

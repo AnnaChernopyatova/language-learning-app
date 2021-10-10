@@ -10,36 +10,14 @@ import ShowCards from './showCards';
 import WordTable from './wordTable';
 import data from '../words.json';
 import homeicon from './images/homeicon.svg';
-import Error from "./Error";
+import Errors from "./Errors";
 import WordsContext from './wordsContext';
+
 
 let wordsArr = data;
 console.log(wordsArr);
 
 export default function Header(){
-
-    let[loading, setLoading] = useState(false);
-    const[words, setWords] = useState([]);
-
-    useEffect(()=>{
-        setLoading(true);
-
-        fetch('http://sandbox.itgirlschool.ru/api/words')
-            .then((response) => response.json())
-            .then((response) =>(
-                console.log(response),
-                setWords(response),
-                setLoading(false)
-            ))
-    }, [])
-
-    if (loading === true){
-        return(
-            <div>
-                Loading...
-            </div>
-        )
-    }
 
     return(
         <Router>
@@ -62,9 +40,6 @@ export default function Header(){
                     </Route>
                     <Route path='/'>
                         <WordTable/>
-                    </Route>
-                    <Route>
-                        <Error></Error>
                     </Route>
                 </Switch>
             </div>

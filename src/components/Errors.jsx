@@ -6,7 +6,7 @@ import gotLost from './images/gotLost.jpg';
 import styles from './styles/error.css';
 
 
-export default function Error(){
+export default function Errors(){
     return(
         <div className='error'>
             <h1>Упс! Только не паникуйте!</h1>
