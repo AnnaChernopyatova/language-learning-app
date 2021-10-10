@@ -15,6 +15,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://sandbox.itgirlschool.ru",
   "eslintConfig": {
     "extends": [
       "react-app",
