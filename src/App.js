@@ -11,17 +11,21 @@ function App() {
     const[words, setWords] = useState([]);
     let[error, setError] = useState(false);
 
-    useEffect(()=>{
-        setLoading(true);
-
+    useEffect(() => {
+      setLoading(true);
+      try {
         fetch('/api/words')
-            .then((response) => response.json())
-            .then((response) =>(
-                console.log(response),
-                setWords(response),
-                setLoading(false)
-            ))
-            .catch(error => setError(true), setLoading(false))
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result);
+            setWords(result);
+            setLoading(false);
+          });
+      } catch (error) {
+        setError(true);
+        setLoading(false);
+      }
     }, [])
 
     if (error === true){

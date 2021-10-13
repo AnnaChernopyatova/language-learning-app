@@ -9,19 +9,14 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3"
   },
+  "proxy":"http://sandbox.itgirlschool.justmakeit.ru",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-    "proxy":{
-      "/api":{
-      "target": "http://sandbox.itgirlschool.justmakeit.ru",
-      "changeOrigin": true
-      }
-    },
-  "eslintConfig": {
+    "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
