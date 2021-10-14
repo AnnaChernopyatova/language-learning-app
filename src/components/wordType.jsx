@@ -11,7 +11,7 @@ function WordType (props){
     }
 
     let deleteWord = () =>{
-        fetch(`/api/words/${props.number}/delete`,{
+        fetch(`http://itgirlschool.justmakeit.ru/api/words/${props.number}/delete`,{
             method: 'POST',
             headers:{
                 'Content-Length': '0'

@@ -28,7 +28,28 @@ export default class NewWordInput extends React.Component{
         } else if (this.state.newTranslation == '' || this.state.newTranslation.match(/[A-Za-z]/gm)){
             document.getElementById('translationInput').classList.toggle('wordChangeInput__Error');
         }
+        else this.formWord();
+    }
 
+    formWord =() =>{
+        let word = {
+            id: this.props.words.length,
+            english: this.state.wordEditable,
+            transcription: this.state.transcriptionEditable,
+            russian: this.state.translationEditable
+        }
+        this.sendChanges(word);
+    }
+
+    sendChanges = (word) =>{
+        fetch(`http://itgirlschool.justmakeit.ru/api/words/add`,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(word)
+        });
+        this.props.openAdding(false);
     }
 
     render(){

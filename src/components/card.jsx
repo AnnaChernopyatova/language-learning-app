@@ -6,7 +6,7 @@ function Card(props){
     let [showButton, setShowButton] = useState(props.showButton || true);
     let [showTranslation, setShowTranslation] = useState(props.showTranslation || false);
 
-    let word = props.wordsArr.words;
+    let words = props.words;
 
     useEffect(() =>{
         setShowButton(showButton = true);
@@ -22,12 +22,9 @@ function Card(props){
 
     return(
         <div className='card'>
-            <h3 className='card_word'>{word[props.cardNumber-1].english}</h3>
-            <div>
-                {word[props.cardNumber-1].tags}
-            </div>
+            <h3 className='card_word'>{words[props.cardNumber-1].english}</h3>
             <div className='card_transcription'>
-                {word[props.cardNumber-1].transcription}
+                {words[props.cardNumber-1].transcription}
             </div>
             <ShowTranslation {...props} handleChange={handleChange} showButton = {showButton} showTranslation = {showTranslation}></ShowTranslation>
         </div>

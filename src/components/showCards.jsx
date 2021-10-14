@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 import arrowleft from './images/arrowleft.svg';
 import arrowright from './images/arrowright.svg';
@@ -9,8 +9,11 @@ import WordsContext from './wordsContext';
 
 
 function ShowCards(props){
-    let[cardNumber, changenumber] = useState(props.cardNumber|| 1 );
+    let[cardNumber, changenumber] = useState( 1 );
     let[wordLearnt, changeWordlearnt] = useState(0);
+
+    let words = useContext(WordsContext);
+    console.log(words);
 
     const moreWordsLearnt = () =>{
         changeWordlearnt(wordLearnt+1);
@@ -26,9 +29,7 @@ function ShowCards(props){
     }
 
     return(
-        <WordsContext.Consumer>
-            {({words})  => 
-        (<div className="showCard">
+        <div className="showCard">
             {cardNumber > words.length? 
             <CardsEnded handlenumber={handlenumber}></CardsEnded>
             : <div className="showCard_card">
@@ -40,7 +41,7 @@ function ShowCards(props){
                         За текущую тренировку выучено {wordLearnt} слов.
                     </div>
                     <Card 
-                        cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} {...props}>
+                        cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} words={words}>
                     </Card>
                     {cardNumber}/{words.length}
                 </div>
@@ -49,9 +50,7 @@ function ShowCards(props){
                 </button>
             
             </div>}
-        </div>)
-        }
-        </WordsContext.Consumer>
+        </div>
     )
 }
 

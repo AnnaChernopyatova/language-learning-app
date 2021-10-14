@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import WordsContext from './wordsContext';
 import WordType from './wordType';
 
 
@@ -6,8 +7,10 @@ import WordType from './wordType';
 
 
 function WordLine (props){
+    let words = useContext(WordsContext);
+    
     return(
-        props.words.words.map((word => {
+        words.map((word => {
             return(
                 <WordType
                     number={word.id}
