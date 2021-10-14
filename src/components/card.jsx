@@ -16,7 +16,9 @@ function Card(props){
     const handleChange = () =>{
         setShowButton(!showButton);
         setShowTranslation(!showTranslation);
-        props.moreWordsLearnt();
+        if (showTranslation == false){
+            props.moreWordsLearnt();
+        }
     }
 
 

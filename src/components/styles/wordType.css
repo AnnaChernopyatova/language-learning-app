@@ -70,12 +70,14 @@
 
 .button__change {
   width: 8.5vw;
+  min-width: 105px;
   background-color: #d8e061;
   border: 2px solid #bdb324;
   border-radius: 5px;
 }
 
 .button__delete {
+  min-width: 60px;
   background-color: #e25e5e;
   border: 2px solid #e92e2e;
   border-radius: 5px;

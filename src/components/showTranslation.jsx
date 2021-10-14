@@ -19,7 +19,7 @@ const ShowTranslation = (props) => {
                 </button>
             }
             {props.showTranslation&&
-                <div className='card_translation'>
+                <div className='card_translation' onClick={props.handleChange} >
                     {word[props.cardNumber-1].russian}
                 </div>
             }

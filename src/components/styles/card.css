@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.card_button:focus, .card_button:focus-within, .card_button:focus-visible {
+  outline: 4px solid blue;
+}
+
 .card_translation {
   margin-top: 8vh;
   margin-bottom: 5px;
