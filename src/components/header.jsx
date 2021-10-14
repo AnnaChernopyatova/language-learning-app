@@ -8,14 +8,12 @@ import{
 import styles from './styles/header.css';
 import ShowCards from './showCards';
 import WordTable from './wordTable';
-import data from '../words.json';
 import homeicon from './images/homeicon.svg';
 import Errors from "./Errors";
 import WordsContext from './wordsContext';
 
 
-let wordsArr = data;
-console.log(wordsArr);
+
 
 export default function Header(){
 
@@ -36,7 +34,7 @@ export default function Header(){
 
                 <Switch>
                     <Route path='/showCards'>
-                        <ShowCards wordsArr={wordsArr}/>
+                                <ShowCards/>
                     </Route>
                     <Route path='/'>
                         <WordTable/>

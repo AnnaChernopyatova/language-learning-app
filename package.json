@@ -9,7 +9,7 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3"
   },
-  "proxy":"http://sandbox.itgirlschool.justmakeit.ru",
+  "proxy":"http://itgirlschool.justmakeit.ru",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

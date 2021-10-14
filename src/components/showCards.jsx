@@ -5,6 +5,7 @@ import arrowright from './images/arrowright.svg';
 import Card from './card';
 import CardsEnded from './cardsEnded';
 import styles from './styles/showCards.css'
+import WordsContext from './wordsContext';
 
 
 function ShowCards(props){
@@ -25,8 +26,10 @@ function ShowCards(props){
     }
 
     return(
-        <div className="showCard">
-            {cardNumber > props.wordsArr.words.length? 
+        <WordsContext.Consumer>
+            {({words})  => 
+        (<div className="showCard">
+            {cardNumber > words.length? 
             <CardsEnded handlenumber={handlenumber}></CardsEnded>
             : <div className="showCard_card">
                 <button className='showCard_button' disabled={cardNumber == 1&& true} onClick={()=> changenumber(cardNumber-1)}>
@@ -39,14 +42,16 @@ function ShowCards(props){
                     <Card 
                         cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} {...props}>
                     </Card>
-                    {cardNumber}/{props.wordsArr.words.length}
+                    {cardNumber}/{words.length}
                 </div>
                 <button className="showCard_button" onClick={nextCard}>
                     <img src={arrowright} alt="Arrow right" className='showCard_buttonImg'/>
                 </button>
             
             </div>}
-        </div>
+        </div>)
+        }
+        </WordsContext.Consumer>
     )
 }
 
