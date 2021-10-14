@@ -38,6 +38,7 @@ export default class NewWordInput extends React.Component{
             transcription: this.state.transcriptionEditable,
             russian: this.state.translationEditable
         }
+        this.setState(this.newWord, this.newTranscription, this.newTranslation = '');
         this.sendChanges(word);
     }
 
@@ -48,7 +49,15 @@ export default class NewWordInput extends React.Component{
                 'Content-Type':'application/json;charset=utf-8'
             },
             body: JSON.stringify(word)
-        });
+        })
+        .then(response => {
+            if (response.ok){
+                return response.json();
+            } else {
+                throw new Error('Something went wrong...')
+            }
+        })
+        ;
         this.props.openAdding(false);
     }
 
