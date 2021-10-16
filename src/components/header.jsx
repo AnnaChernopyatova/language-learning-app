@@ -10,12 +10,12 @@ import ShowCards from './showCards';
 import WordTable from './wordTable';
 import homeicon from './images/homeicon.svg';
 import Errors from "./Errors";
-import WordsContext from './wordsContext';
+import WordsContext from './context/wordsContext';
 
 
 
 
-export default function Header(){
+export default function Header(props){
 
     return(
         <Router>
@@ -37,7 +37,7 @@ export default function Header(){
                                 <ShowCards/>
                     </Route>
                     <Route path='/'>
-                        <WordTable/>
+                        <WordTable {...props}/>
                     </Route>
                 </Switch>
             </div>

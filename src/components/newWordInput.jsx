@@ -57,10 +57,11 @@ export default class NewWordInput extends React.Component{
                 throw new Error('Something went wrong...')
             }
         })
-        ;
+        .then(this.props.loadData());
+        
         this.props.openAdding(false);
     }
-
+    
     render(){
         return(
             <div className='wholeWindow'>

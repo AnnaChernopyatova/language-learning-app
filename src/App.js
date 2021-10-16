@@ -3,7 +3,8 @@ import './App.css';
 import Header from './components/header';
 import Loading from './components/Loading';
 import Errors from "./components/Errors";
-import WordsContext from './components/wordsContext';
+import WordsContext from './components/context/wordsContext';
+
 
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
     const[words, setWords] = useState([]);
     let[error, setError] = useState(false);
 
-    useEffect(() => {
-      setLoading(true);
+    const loadData=() =>{
       try {
         fetch('http://itgirlschool.justmakeit.ru/api/words')
         .then(res => res.json())
@@ -27,6 +27,11 @@ function App() {
         setError(true);
         setLoading(false);
       }
+    }
+
+    useEffect(() => {
+      setLoading(true);
+      loadData();
     }, [])
 
     if (error === true){
@@ -41,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <WordsContext.Provider value = {words} >
-        <Header></Header>
+          <Header loadData={loadData} setLoading={setLoading}></Header>
       </WordsContext.Provider>
     </div>
   );

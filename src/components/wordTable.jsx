@@ -3,7 +3,7 @@ import styles from './styles/wordTable.css';
 import WordLine from './wordLine';
 import Plus from './images/plus.png';
 import NewWordInput from './newWordInput';
-import WordsContext from './wordsContext';
+import WordsContext from './context/wordsContext';
 
 
 
@@ -36,7 +36,7 @@ function WordTable (props){
             <div className='wordTable_header wordtable_header__empty'>
                 
             </div>
-            <WordLine></WordLine>
+            <WordLine {...props}></WordLine>
 
             <div className='addButton' onClick={openAdding}><img alt='Add new word' src={Plus} className='addButton_img'/></div>
         </div>

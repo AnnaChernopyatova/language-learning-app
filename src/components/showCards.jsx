@@ -5,7 +5,7 @@ import arrowright from './images/arrowright.svg';
 import Card from './card';
 import CardsEnded from './cardsEnded';
 import styles from './styles/showCards.css'
-import WordsContext from './wordsContext';
+import WordsContext from './context/wordsContext';
 
 
 function ShowCards(props){
@@ -13,7 +13,6 @@ function ShowCards(props){
     let[wordLearnt, changeWordlearnt] = useState(0);
 
     let words = useContext(WordsContext);
-    console.log(words);
 
     const moreWordsLearnt = () =>{
         changeWordlearnt(wordLearnt+1);

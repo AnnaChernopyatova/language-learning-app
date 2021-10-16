@@ -53,13 +53,22 @@ class ChangeWord extends React.Component{
     }
 
     sendChanges = (word) =>{
+        this.props.setLoading(true);
         fetch(`http://itgirlschool.justmakeit.ru/api/words/${this.props.number}/update`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json;charset=utf-8'
             },
             body: JSON.stringify(word)
-        });
+        })
+        .then(response => {
+            if (response.ok) { 
+                return response.json();
+            } else {
+                throw new Error('Something went wrong ...');
+            }
+        })
+        .then(this.props.loadData());
     }
 
     render(){
