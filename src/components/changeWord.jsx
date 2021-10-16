@@ -12,9 +12,15 @@ class ChangeWord extends React.Component{
         };
     }
 
+    componentDidUpdate(){
+        if(this.state.wordEditable == '' || this.state.transcriptionEditable == '' || this.state.translationEditable == ''){
+            this.setState({blockButton: true})}
+        else this.setState({blockButton: false});
+    }
+
     handleChange = (e) => {
         this.setState({[e.target.name]:e.target.value});
-        this.blockButton();
+        //this.blockButton();
     }
 
     blockButton = () =>{

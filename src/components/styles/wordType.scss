@@ -61,12 +61,14 @@
 
 .button__change{
     width: 8.5vw;
+    min-width: 105px;
     background-color: rgb(216, 224, 97);
     border: 2px solid rgb(189, 179, 36);
     border-radius: 5px;
 }
 
 .button__delete{
+    min-width: 60px;
     background-color: rgb(226, 94, 94);
     border: 2px solid rgb(233, 46, 46);
     border-radius: 5px;

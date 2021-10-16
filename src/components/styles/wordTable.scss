@@ -17,18 +17,22 @@
 
 .wordTable_header__num{
     width: 4.2vw;
+    height: 3.5vh;
 }
 
 .wordTable_haeder__word{
     width: 25vw;
+    height: 3.5vh;
 }
 
 .wordTable_haeder__transcription{
     width: 25vw;
+    height: 3.5vh;
 }
 
 .wordTable_haeder__translation{
     width: 25vw;
+    height: 3.5vh;
 }
 
 .wordtable_header__empty{
@@ -88,4 +92,6 @@
 
 .button__add{
     align-self: center;
+    max-width: 20vw;
+    height: 3.5vh;
 }
