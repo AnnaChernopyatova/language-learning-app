@@ -13,7 +13,7 @@ function WordType (props){
 
     let deleteWord = () =>{
         props.setLoading(true);
-        fetch(`http://itgirlschool.justmakeit.ru/api/words/${props.number}/delete`,{
+        fetch(`/api/words/${props.number}/delete`,{
             method: 'POST',
             headers:{
                 'Content-Length': '0'

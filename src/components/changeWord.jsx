@@ -55,7 +55,7 @@ class ChangeWord extends React.Component{
 
     sendChanges = (word) =>{
         this.props.setLoading(true);
-        fetch(`http://itgirlschool.justmakeit.ru/api/words/${this.props.number}/update`,{
+        fetch(`/api/words/${this.props.number}/update`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json;charset=utf-8'

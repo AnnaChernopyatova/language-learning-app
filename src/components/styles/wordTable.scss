@@ -3,6 +3,9 @@
 .wordTable{
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
+    height: 85vh;
+    
 }
 
 .wordTable_header{
@@ -12,31 +15,32 @@
     padding-top: 1vh;
     font-family: $fontFamily;
     font-size: $fontSizeReg;
-    border: 1px solid $peach;
+    
 }
 
 .wordTable_header__num{
-    width: 4.2vw;
+    width: 5vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__word{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__transcription{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__translation{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordtable_header__empty{
     width: 20vw;
+    height: 3.5vh;
 }
 
 .addButton{

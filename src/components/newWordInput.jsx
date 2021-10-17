@@ -43,7 +43,7 @@ export default class NewWordInput extends React.Component{
     }
 
     sendChanges = (word) =>{
-        fetch(`http://itgirlschool.justmakeit.ru/api/words/add`,{
+        fetch(`/api/words/add`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json;charset=utf-8'
