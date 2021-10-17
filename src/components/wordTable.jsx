@@ -1,15 +1,26 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import styles from './styles/wordTable.css';
 import WordLine from './wordLine';
-import data from '../words.json';
+import Plus from './images/plus.png';
+import NewWordInput from './newWordInput';
+import WordsContext from './context/wordsContext';
 
-let wordsArr = data;
+
 
 
 
 function WordTable (props){
+
+    let [addWord, setAddWord] = useState(false);
+    let words = useContext(WordsContext);
+
+    let openAdding =() =>{
+        setAddWord(!addWord);
+    }
+
     return(
         <div className='wordTable'>
+            {addWord && <NewWordInput openAdding = {openAdding} words = {words} {...props}></NewWordInput>}
             <div className='wordTable_header wordTable_header__num'>
                 #
             </div>
@@ -25,7 +36,9 @@ function WordTable (props){
             <div className='wordTable_header wordtable_header__empty'>
                 
             </div>
-            <WordLine words={wordsArr}></WordLine>
+            <WordLine {...props}></WordLine>
+
+            <div className='addButton' onClick={openAdding}><img alt='Add new word' src={Plus} className='addButton_img'/></div>
         </div>
 
         );

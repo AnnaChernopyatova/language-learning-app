@@ -19,30 +19,30 @@
 
 .wordline_Number{
     padding-top: 1vh;
-    width: 4.2vw;
+    width: 5vw;
     border: 1px solid $peach;
 }
 
 .wordLine_word{
     padding-top: 1vh;
-    width: 25vw;
+    width: 23vw;
     border: 1px solid $peach;
 }
 
 .wordLine_transcription{
     padding-top: 1vh;
-    width: 25vw;
+    width: 23vw;
     border: 1px solid $peach;
 }
 
 .wordLine_translation{
     padding-top: 1vh;
-    width: 25vw;
+    width: 23vw;
     border: 1px solid $peach;
 }
 
 .wordLine_empty{
-    width: 20vw;
+    width: 24vw;
     border: 1px solid $peach;
     display: flex;
     justify-content: space-evenly;

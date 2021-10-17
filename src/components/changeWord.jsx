@@ -12,11 +12,6 @@ class ChangeWord extends React.Component{
         };
     }
 
-    componentDidUpdate(){
-        if(this.state.wordEditable == '' || this.state.transcriptionEditable == '' || this.state.translationEditable == ''){
-            this.setState({blockButton: true})}
-        else this.setState({blockButton: false});
-    }
 
     handleChange = (e) => {
         this.setState({[e.target.name]:e.target.value});
@@ -44,6 +39,37 @@ class ChangeWord extends React.Component{
         
         console.log(this.state.wordEditable, this.state.transcriptionEditable, this.state.translationEditable);
         this.props.handleChange();
+        this.formWord();
+    }
+
+    formWord =() =>{
+        debugger;
+        let word = {
+            id: this.props.number,
+            english: this.state.wordEditable,
+            transcription: this.state.transcriptionEditable,
+            russian: this.state.translationEditable
+        }
+        this.sendChanges(word);
+    }
+
+    sendChanges = (word) =>{
+        this.props.setLoading(true);
+        fetch(`/api/words/${this.props.number}/update`,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(word)
+        })
+        .then(response => {
+            if (response.ok) { 
+                return response.json();
+            } else {
+                throw new Error('Something went wrong ...');
+            }
+        })
+        .then(this.props.loadData());
     }
 
     render(){

@@ -1,14 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import ChangeWord from './changeWord';
 import styles from './styles/wordType.css';
 
 
 function WordType (props){
+
     const [change, setChange] = useState(false);
 
     const handleChange = () =>{
         setChange(!change);
     }
+
+    let deleteWord = () =>{
+        props.setLoading(true);
+        fetch(`/api/words/${props.number}/delete`,{
+            method: 'POST',
+            headers:{
+                'Content-Length': '0'
+            }
+        })
+        .then(response => {
+            if (response.ok) { 
+                return response.json();
+            } else {
+                throw new Error('Something went wrong ...');
+            }
+        })
+        .then(props.loadData())
+    }
+    
     return(
         <div className='line'>
             <div className='wordline_Number'>
@@ -30,7 +50,7 @@ function WordType (props){
                     <button className='button button__change' onClick={handleChange}>
                         Редактировать
                     </button>
-                    <button className='button button__delete'>
+                    <button className='button button__delete' type='button' onClick={deleteWord}>
                         Удалить
                     </button>
                 </div>

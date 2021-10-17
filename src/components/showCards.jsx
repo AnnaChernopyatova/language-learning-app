@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 import arrowleft from './images/arrowleft.svg';
 import arrowright from './images/arrowright.svg';
 import Card from './card';
 import CardsEnded from './cardsEnded';
 import styles from './styles/showCards.css'
+import WordsContext from './context/wordsContext';
 
 
 function ShowCards(props){
-    let[cardNumber, changenumber] = useState(props.cardNumber|| 1 );
+    let[cardNumber, changenumber] = useState( 1 );
     let[wordLearnt, changeWordlearnt] = useState(0);
+
+    let words = useContext(WordsContext);
 
     const moreWordsLearnt = () =>{
         changeWordlearnt(wordLearnt+1);
@@ -26,7 +29,7 @@ function ShowCards(props){
 
     return(
         <div className="showCard">
-            {cardNumber > props.wordsArr.words.length? 
+            {cardNumber > words.length? 
             <CardsEnded handlenumber={handlenumber}></CardsEnded>
             : <div className="showCard_card">
                 <button className='showCard_button' disabled={cardNumber == 1&& true} onClick={()=> changenumber(cardNumber-1)}>
@@ -37,9 +40,9 @@ function ShowCards(props){
                         За текущую тренировку выучено {wordLearnt} слов.
                     </div>
                     <Card 
-                        cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} {...props}>
+                        cardNumber = {cardNumber} moreWordsLearnt={moreWordsLearnt} words={words}>
                     </Card>
-                    {cardNumber}/{props.wordsArr.words.length}
+                    {cardNumber}/{words.length}
                 </div>
                 <button className="showCard_button" onClick={nextCard}>
                     <img src={arrowright} alt="Arrow right" className='showCard_buttonImg'/>

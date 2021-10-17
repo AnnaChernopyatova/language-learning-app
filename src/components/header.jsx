@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import{
     BrowserRouter as Router,
     Switch,
@@ -8,14 +8,15 @@ import{
 import styles from './styles/header.css';
 import ShowCards from './showCards';
 import WordTable from './wordTable';
-import data from '../words.json';
 import homeicon from './images/homeicon.svg';
-import Error from "./Error";
+import Errors from "./Errors";
+import WordsContext from './context/wordsContext';
 
-let wordsArr = data;
-console.log(wordsArr);
 
-export default function Header(){
+
+
+export default function Header(props){
+
     return(
         <Router>
             <div className='header'>
@@ -33,13 +34,10 @@ export default function Header(){
 
                 <Switch>
                     <Route path='/showCards'>
-                        <ShowCards wordsArr={wordsArr}/>
+                                <ShowCards/>
                     </Route>
                     <Route path='/'>
-                        <WordTable/>
-                    </Route>
-                    <Route>
-                        <Error></Error>
+                        <WordTable {...props}/>
                     </Route>
                 </Switch>
             </div>

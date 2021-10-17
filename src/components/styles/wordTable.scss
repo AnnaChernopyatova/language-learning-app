@@ -3,6 +3,9 @@
 .wordTable{
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
+    height: 85vh;
+    
 }
 
 .wordTable_header{
@@ -12,30 +15,87 @@
     padding-top: 1vh;
     font-family: $fontFamily;
     font-size: $fontSizeReg;
-    border: 1px solid $peach;
+    
 }
 
 .wordTable_header__num{
-    width: 4.2vw;
+    width: 5vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__word{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__transcription{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordTable_haeder__translation{
-    width: 25vw;
+    width: 23vw;
     height: 3.5vh;
 }
 
 .wordtable_header__empty{
+    width: 20vw;
+    height: 3.5vh;
+}
+
+.addButton{
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    width: 100px;
+    &:hover{
+        width: 120px;
+        transform: rotate(180deg);
+        transition: transform.9s;
+    }
+    
+    
+}
+
+.addButton_img{
+    width: 100%;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.wholeWindow{
+    position: absolute;
+    background-color: rgba(48, 48, 48, 0.562);
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+.addNewWordForm{
+    margin-top: 20vh;
+    padding: 20px;
+    width: 45vw;
+    height: 30vh;
+    border: 2px solid $peach;
+    font-size: $fontSizeReg;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.addNewWordForm_close{
+    font-size: $fontSizeReg;
+    font-weight: 700;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.button__add{
+    align-self: center;
     max-width: 20vw;
     height: 3.5vh;
 }

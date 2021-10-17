@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import WordsContext from './context/wordsContext';
 import WordType from './wordType';
 
 
@@ -6,8 +7,11 @@ import WordType from './wordType';
 
 
 function WordLine (props){
+    const words = useContext(WordsContext);
+
+    
     return(
-        props.words.words.map((word => {
+        words.map((word => {
             return(
                 <WordType
                     number={word.id}
@@ -15,6 +19,7 @@ function WordLine (props){
                     transcription={word.transcription}
                     translation={word.russian}
                     change={false}
+                    {...props}
                 > </WordType>
             )
         }

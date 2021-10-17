@@ -22,30 +22,30 @@
 
 .wordline_Number {
   padding-top: 1vh;
-  width: 4.2vw;
+  width: 5vw;
   border: 1px solid #e6905e;
 }
 
 .wordLine_word {
   padding-top: 1vh;
-  width: 25vw;
+  width: 23vw;
   border: 1px solid #e6905e;
 }
 
 .wordLine_transcription {
   padding-top: 1vh;
-  width: 25vw;
+  width: 23vw;
   border: 1px solid #e6905e;
 }
 
 .wordLine_translation {
   padding-top: 1vh;
-  width: 25vw;
+  width: 23vw;
   border: 1px solid #e6905e;
 }
 
 .wordLine_empty {
-  width: 20vw;
+  width: 24vw;
   border: 1px solid #e6905e;
   display: -webkit-box;
   display: -ms-flexbox;

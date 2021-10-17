@@ -3,7 +3,7 @@ import React, {useRef, useEffect} from 'react';
 
 const ShowTranslation = (props) => {
 
-    let word = props.wordsArr.words;
+    let words = props.words;
 
     const ref = useRef();
     useEffect(() => {
@@ -20,7 +20,7 @@ const ShowTranslation = (props) => {
             }
             {props.showTranslation&&
                 <div className='card_translation' onClick={props.handleChange} >
-                    {word[props.cardNumber-1].russian}
+                    {words[props.cardNumber-1].russian}
                 </div>
             }
         </div>
