@@ -1,4 +1,6 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
+import { makeObservable, observable } from 'mobx';
 
 
 
@@ -12,7 +14,11 @@ export default class NewWordInput extends React.Component{
             error: false,
             wordError: false
         }
+        makeObservable={
+            word: observable
+        }
     }
+
 
     handleChange = (e)=>{
         this.setState({[e.target.name]:e.target.value});
@@ -63,6 +69,7 @@ export default class NewWordInput extends React.Component{
     }
     
     render(){
+            const isBlockButton = this.state.wordEditable === '' || this.state.transcriptionEditable === '' || this.state.translationEditable === '';
         return(
             <div className='wholeWindow'>
                 <div className='addNewWordForm'>
@@ -81,7 +88,7 @@ export default class NewWordInput extends React.Component{
                         Введите перевод:
                         <input type='text' name='newTranslation' id='translationInput' value={this.newTranslation} onChange={this.handleChange}/>
                     </div>
-                    <button type='button' className='button__save button__add' onClick={this.handleValidation} >Сохранить</button>
+                    <button type='button' className='button__save button__add' disabled={isBlockButton} onClick={this.handleValidation} >Сохранить</button>
                 </div>        
             </div>
         )
