@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WordsStore from './components/WordsStore';
+import { Provider } from 'mobx-react';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider WordsStore={WordsStore}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

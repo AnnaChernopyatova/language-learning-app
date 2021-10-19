@@ -4,16 +4,18 @@ import Header from './components/header';
 import Loading from './components/Loading';
 import Errors from "./components/Errors";
 import WordsContext from './components/context/wordsContext';
+import WordsStore from './components/WordsStore';
+import { inject, observer, Provider } from 'mobx-react';
 
 
 
-function App() {
+const App = inject('WordsStore')(observer(({props}) =>  {
 
   let[loading, setLoading] = useState(false);
     const[words, setWords] = useState([]);
     let[error, setError] = useState(false);
 
-    const loadData=() =>{
+    /*const loadData=() =>{
       try {
         fetch('http://itgirlschool.justmakeit.ru/api/words')
         .then(res => res.json())
@@ -27,11 +29,12 @@ function App() {
         setError(true);
         setLoading(false);
       }
-    }
+    }*/
 
     useEffect(() => {
       setLoading(true);
-      loadData();
+      setWords(WordsStore.loadData);
+      setLoading(false);
     }, [])
 
     if (error === true){
@@ -46,10 +49,13 @@ function App() {
   return (
     <div className="App">
       <WordsContext.Provider value = {words} >
-          <Header loadData={loadData} setLoading={setLoading}></Header>
+          <Header setLoading={setLoading}></Header>
       </WordsContext.Provider>
     </div>
   );
+
 }
+));
+
 
 export default App;

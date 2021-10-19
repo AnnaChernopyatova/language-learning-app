@@ -45,7 +45,7 @@ class ChangeWord extends React.Component{
     formWord =() =>{
         debugger;
         let word = {
-            id: this.props.number,
+            tags: '',
             english: this.state.wordEditable,
             transcription: this.state.transcriptionEditable,
             russian: this.state.translationEditable

@@ -14,9 +14,9 @@ export default class NewWordInput extends React.Component{
             error: false,
             wordError: false
         }
-        makeObservable={
-            word: observable
-        }
+        //makeObservable={
+        //    word: observable
+        //}
     }
 
 
@@ -39,10 +39,10 @@ export default class NewWordInput extends React.Component{
 
     formWord =() =>{
         let word = {
-            id: this.props.words.length,
-            english: this.state.wordEditable,
-            transcription: this.state.transcriptionEditable,
-            russian: this.state.translationEditable
+            tags: '',
+            english: this.state.newWord,
+            transcription: this.state.newTranscription,
+            russian: this.state.newTranslation
         }
         this.setState(this.newWord, this.newTranscription, this.newTranslation = '');
         this.sendChanges(word);
