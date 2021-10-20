@@ -9,11 +9,11 @@ import { inject, observer, Provider } from 'mobx-react';
 
 
 
-const App = inject('WordsStore')(observer(({props}) =>  {
+const App = ({loading, error }) =>  {
 
-  let[loading, setLoading] = useState(false);
-    const[words, setWords] = useState([]);
-    let[error, setError] = useState(false);
+  //let[loading, setLoading] = useState(false);
+    //const[words, setWords] = useState([]);
+    //let[error, setError] = useState(false);
 
     /*const loadData=() =>{
       try {
@@ -29,13 +29,13 @@ const App = inject('WordsStore')(observer(({props}) =>  {
         setError(true);
         setLoading(false);
       }
-    }*/
+    }
 
     useEffect(() => {
       setLoading(true);
       setWords(WordsStore.loadData);
       setLoading(false);
-    }, [])
+    }, [])*/
 
     if (error === true){
       return (<Errors></Errors>)
@@ -48,14 +48,21 @@ const App = inject('WordsStore')(observer(({props}) =>  {
   }
   return (
     <div className="App">
-      <WordsContext.Provider value = {words} >
-          <Header setLoading={setLoading}></Header>
-      </WordsContext.Provider>
+          <Header /*setLoading={setLoading}*/></Header>
     </div>
   );
 
-}
-));
+};
 
 
-export default App;
+export default inject (({WordsStore}) =>{
+   const {loading, error, loadData } = WordsStore;
+
+   useEffect(() =>{
+     loadData();
+   });
+
+   return{
+     loading, error
+   };
+})(observer(App));

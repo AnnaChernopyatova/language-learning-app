@@ -1,13 +1,14 @@
 import React, {useContext} from 'react';
 import WordsContext from './context/wordsContext';
 import WordType from './wordType';
+import {inject, observer} from 'mobx-react';
 
 
 
 
 
-function WordLine (props){
-    const words = useContext(WordsContext);
+function WordLine ({words}){
+    //const words = useContext(WordsContext);
 
     
     return(
@@ -19,7 +20,6 @@ function WordLine (props){
                     transcription={word.transcription}
                     translation={word.russian}
                     change={false}
-                    {...props}
                 > </WordType>
             )
         }
@@ -28,4 +28,8 @@ function WordLine (props){
 
 }
 
-export default WordLine;
+export default inject (({WordsStore}) =>{
+    const {words} = WordsStore;
+
+    return words;
+})(observer(WordLine));

@@ -9,7 +9,7 @@ import { Provider } from 'mobx-react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider WordsStore={WordsStore}>
+    <Provider {...WordsStore}>
     <App />
     </Provider>
   </React.StrictMode>,

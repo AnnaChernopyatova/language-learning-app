@@ -1,11 +1,15 @@
-import { action, computed, makeObservable, observable, reaction } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 
 class WordsStore{
   words = [];
+  loading = false;
+  error = false;
 
   constructor(){
     makeObservable(this,{
       words: observable,
+      loading: observable,
+      error: observable,
       loadData: action, 
       sendNewChanges: action,
       sendChanges: action,
@@ -15,6 +19,7 @@ class WordsStore{
   }
 
     loadData () {
+        this.loading = true;
         try {
           fetch('http://itgirlschool.justmakeit.ru/api/words')
           .then(res => res.json())
@@ -22,8 +27,11 @@ class WordsStore{
             (result) => {
               console.log(result);
               this.words = result;
+              this.loading = true;
             });
         } catch (error) {
+            this.error = true;
+            this.loading = false;
         }
         return this.words;
     }

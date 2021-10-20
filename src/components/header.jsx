@@ -37,7 +37,7 @@ export default function Header(props){
                                 <ShowCards/>
                     </Route>
                     <Route path='/'>
-                        <WordTable {...props}/>
+                        <WordTable/>
                     </Route>
                 </Switch>
             </div>
