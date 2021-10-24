@@ -5,11 +5,18 @@ import Loading from './components/Loading';
 import Errors from "./components/Errors";
 import WordsContext from './components/context/wordsContext';
 import WordsStore from './components/WordsStore';
+import stores from './components/stores';
 import { inject, observer, Provider } from 'mobx-react';
 
 
 
-const App = ({loading, error }) =>  {
+const App = inject(['WordsStore'])(observer(({WordsStore}) =>  {
+
+  const {loading, error, loadData } = WordsStore;
+
+   useEffect(() =>{
+     loadData();
+   });
 
   //let[loading, setLoading] = useState(false);
     //const[words, setWords] = useState([]);
@@ -52,17 +59,8 @@ const App = ({loading, error }) =>  {
     </div>
   );
 
-};
+}
+));
 
 
-export default inject (({WordsStore}) =>{
-   const {loading, error, loadData } = WordsStore;
-
-   useEffect(() =>{
-     loadData();
-   });
-
-   return{
-     loading, error
-   };
-})(observer(App));
+export default App;

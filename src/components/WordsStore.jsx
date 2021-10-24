@@ -27,7 +27,7 @@ class WordsStore{
             (result) => {
               console.log(result);
               this.words = result;
-              this.loading = true;
+              this.loading = false;
             });
         } catch (error) {
             this.error = true;

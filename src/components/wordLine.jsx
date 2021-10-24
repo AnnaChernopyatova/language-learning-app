@@ -1,15 +1,17 @@
 import React, {useContext} from 'react';
 import WordsContext from './context/wordsContext';
 import WordType from './wordType';
+import stores from './stores';
 import {inject, observer} from 'mobx-react';
 
 
 
 
 
-function WordLine ({words}){
+const WordLine = inject(['WordsStore'])(observer(({WordsStore}) => {
     //const words = useContext(WordsContext);
 
+    const {words} = WordsStore;
     
     return(
         words.map((word => {
@@ -27,9 +29,6 @@ function WordLine ({words}){
     )
 
 }
+));
 
-export default inject (({WordsStore}) =>{
-    const {words} = WordsStore;
-
-    return words;
-})(observer(WordLine));
+export default WordLine;

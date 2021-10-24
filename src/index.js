@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import WordsStore from './components/WordsStore';
+import stores from './components/stores';
 import { Provider } from 'mobx-react';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider {...WordsStore}>
+    <Provider WordsStore={stores}>
     <App />
     </Provider>
   </React.StrictMode>,
